@@ -1,0 +1,29 @@
+<div class="container mt-2">
+  <div>
+    <a class="btn btn-secondary" routerLink="component1Path">component1</a>
+  </div>
+  <div class="mt-2">
+    <table class="table table-striped">
+      <thead>
+      <tr class="table-primary">
+        <th *ngFor="let i of example">
+          字段{{ i }}
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>value1</td>
+        <td>value2</td>
+        <td>value3</td>
+        <td>value4</td>
+        <td>value5</td>
+        <td>
+          <a class="btn btn-primary" routerLink="component2Path/2">component2</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>
