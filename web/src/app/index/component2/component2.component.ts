@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-component2',
@@ -7,7 +7,8 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./component2.component.css']
 })
 export class Component2Component implements OnInit {
-  constructor(private route: ActivatedRoute) { }
+  constructor(private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -15,4 +16,10 @@ export class Component2Component implements OnInit {
     });
   }
 
+  /**
+   * 关闭窗口
+   */
+  onClose() {
+    this.router.navigate(['../../'], {relativeTo: this.route});
+  }
 }
