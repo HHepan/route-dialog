@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-component1',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Component1Component implements OnInit {
 
-  constructor() {}
+  constructor(private router: Router,
+              private route: ActivatedRoute) {}
 
   ngOnInit(): void {
   }
 
+  /**
+   * 关闭窗口
+   */
+  onClose() {
+    this.router.navigate(['../'], {relativeTo: this.route});
+  }
 }
